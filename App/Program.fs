@@ -12,9 +12,9 @@ let main argv =
     let day = readInput()
 
     match day with
-    | "Day1" ->
+    | "1" ->
         let result = run()
-        printfn "Day1 result: %A" result
+        printfn $"Day1 result: %A{result}"
     | _ -> 
         printfn "Invalid day selected."
     0
