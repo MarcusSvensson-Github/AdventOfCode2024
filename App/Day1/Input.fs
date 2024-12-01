@@ -1,6 +1,6 @@
-module Input 
+module Input
 
-    let lists = 
+let getInput () = 
     """
     64256   78813
     46941   56838
