@@ -23,4 +23,20 @@ let run () =
     
     let diffArray = Array.map2 (fun first second -> abs (first - second)) firstIntListSorted secondIntListSorted
 
-    Array.sum diffArray
+    let resultPartOne = Array.sum diffArray
+    
+    let calculateScore (leftList: int[], rightList: int[]) =
+        let valueOccurence = 
+            leftList
+            |> Array.map (fun x ->
+                rightList
+                |> Array.filter(fun y -> y = x)
+                |> Array.length)
+      
+        
+        Array.zip leftList valueOccurence
+        |> Array.map (fun (x, count) -> x * count) 
+ 
+           
+    let resultPartTwo = calculateScore(firstIntListSorted, secondIntListSorted)
+    [|resultPartOne,Array.sum resultPartTwo|]
